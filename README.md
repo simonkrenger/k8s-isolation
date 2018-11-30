@@ -5,3 +5,7 @@ This repository contains code to create containers that test the isolation of Ku
 ## forkbomb
 
 The `forkbomb` container runs a script that forks infinitely.
+
+## cpuload
+
+The `cpuload` container consumes all the CPU that it sees. It checks for the available cores and spawns a process for each core consuming CPU cycles.
