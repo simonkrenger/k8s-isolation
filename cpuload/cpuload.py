@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Code comes from: https://gist.github.com/tott/3895832
 # Converted to Python 3
