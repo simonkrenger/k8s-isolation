@@ -9,3 +9,7 @@ The `forkbomb` container runs a script that forks infinitely.
 ## cpuload
 
 The `cpuload` container consumes all the CPU that it sees. It checks for the available cores and spawns a process for each core consuming CPU cycles.
+
+## memoryeater
+
+The `memoryeater` container consumes all memory resources. This will lead to the container typically being OOM killed by the orchestrator.
