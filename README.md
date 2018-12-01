@@ -4,7 +4,7 @@ This repository contains code to create containers that test the isolation of Ku
 
 ## forkbomb
 
-The `forkbomb` container runs a script that forks infinitely.
+The `forkbomb` container runs a script that forks infinitely. This creates new processes, potentially affecting other workload by using up system resources.
 
 ## cpuload
 
@@ -13,3 +13,7 @@ The `cpuload` container consumes all the CPU that it sees. It checks for the ava
 ## memoryeater
 
 The `memoryeater` container consumes all memory resources. This will lead to the container typically being OOM killed by the orchestrator.
+
+## filedescriptors
+
+The `filedescriptors` container opens file descriptors in a loop. The file `/etc/hosts` is used to create the file descriptors. Typically, file descriptors are shared system-wide and not namespaced - this can lead to other processes being affected
