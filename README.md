@@ -18,15 +18,16 @@ The `memoryeater` container consumes all memory resources. This will lead to the
 
 The `forkbomb` container runs a script that forks infinitely. This creates new processes, potentially affecting other workload by using up system resources (e.g. PIDs).
 
-### filedescriptors
+### filedescriptors
 
 The `filedescriptors` container opens as many file descriptors as possible. The file `/etc/hosts` is used to create the file descriptors. Typically, file descriptors are shared system-wide and not namespaced.
 
-## Usage
+## Usage
 
-The containers in this repository are available as trusted builds on Docker Hub: https://hub.docker.com/r/simonkrenger/
+The containers in this repository are available as trusted builds on [Docker Hub](https://hub.docker.com/r/simonkrenger/).
 
 To run these containers locally:
+
 ```
 docker run simonkrenger/forkbomb
 docker run simonkrenger/cpuload
@@ -35,6 +36,7 @@ docker run simonkrenger/filedescriptors
 ```
 
 To run these containers on Kubernetes as a pod (example):
+
 ```
 apiVersion: v1
 kind: Pod
