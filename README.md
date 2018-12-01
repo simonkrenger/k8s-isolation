@@ -26,9 +26,22 @@ The `filedescriptors` container opens file descriptors in a loop. The file `/etc
 
 The containers in this repository are available as trusted builds on Docker Hub: https://hub.docker.com/r/simonkrenger/
 
+To run these containers locally:
 ```
-docker pull simonkrenger/forkbomb
-docker pull simonkrenger/cpuload
-docker pull simonkrenger/memoryeater
-docker pull simonkrenger/filedescriptors
+docker run simonkrenger/forkbomb
+docker run simonkrenger/cpuload
+docker run simonkrenger/memoryeater
+docker run simonkrenger/filedescriptors
+```
+
+To run these containers on Kubernetes as a pod:
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simonkrenger-cpuload
+spec:
+  containers:
+  - name: cpuload
+    image: simonkrenger/cpuload:latest
 ```
