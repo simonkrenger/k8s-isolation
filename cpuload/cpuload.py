@@ -12,6 +12,6 @@ def f(x):
 
 if __name__ == '__main__':
     processes = cpu_count()
-    print(f'Utilizing {processes} cores\n')
+    print(f'Utilizing {processes} cores...\n')
     pool = Pool(processes)
     pool.map(f, range(processes))

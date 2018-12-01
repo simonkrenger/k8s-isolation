@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-import random
-import string
-
 list=[]
+
+print('Starting to consume memory...')
 
 while True:
   list.append('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
