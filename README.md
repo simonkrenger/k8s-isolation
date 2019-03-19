@@ -22,6 +22,10 @@ The `forkbomb` container runs a script that forks infinitely. This creates new p
 
 The `filedescriptors` container opens as many file descriptors as possible. The file `/etc/hosts` is used to create the file descriptors. Typically, file descriptors are shared system-wide and not namespaced.
 
+### entropy
+
+The `entropy` container consumes randomness by repeatedly querying `/dev/random`. This will deplete the entropy pool for the kernel. Typically, entropy is system-wide and is not namespaced.
+
 ## Usage
 
 The containers in this repository are available as trusted builds on [Docker Hub](https://hub.docker.com/r/simonkrenger/).
@@ -33,6 +37,7 @@ docker run simonkrenger/forkbomb
 docker run simonkrenger/cpuload
 docker run simonkrenger/memoryeater
 docker run simonkrenger/filedescriptors
+docker run simonkrenger/entropy
 ```
 
 To run these containers on Kubernetes as a pod (example):
