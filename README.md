@@ -26,6 +26,10 @@ The `filedescriptors` container opens as many file descriptors as possible. The 
 
 The `entropy` container consumes randomness by repeatedly querying `/dev/random`. This will deplete the entropy pool for the kernel. Typically, entropy is system-wide and is not namespaced.
 
+### logspam
+
+The `logspam` container writes a lot of data to `stdout`. Depending on your configuration, this can overwhelm your logging stack or logging infrastructure.
+
 ## Usage
 
 The containers in this repository are available as trusted builds on [Docker Hub](https://hub.docker.com/r/simonkrenger/).
@@ -33,11 +37,12 @@ The containers in this repository are available as trusted builds on [Docker Hub
 To run these containers locally:
 
 ```
-docker run simonkrenger/forkbomb
-docker run simonkrenger/cpuload
-docker run simonkrenger/memoryeater
-docker run simonkrenger/filedescriptors
-docker run simonkrenger/entropy
+podman run simonkrenger/forkbomb
+podman run simonkrenger/cpuload
+podman run simonkrenger/memoryeater
+podman run simonkrenger/filedescriptors
+podman run simonkrenger/entropy
+podman run simonkrenger/logspam
 ```
 
 To run these containers on Kubernetes as a pod (example):
