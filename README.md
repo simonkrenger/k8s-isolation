@@ -2,6 +2,8 @@
 
 This repository contains code to create containers that test the isolation of Kubernetes or other container orchestrators. Typically, the containers in this repository excessively consume resources, which may affect other containers or processes running on the same host.
 
+These containers can be used to demonstrate shared resource issues and mitigations.
+
 ## Description
 
 The following containers are available in this repository:
@@ -22,6 +24,10 @@ The `forkbomb` container runs a script that forks infinitely. This creates new p
 
 The `filedescriptors` container opens as many file descriptors as possible. The file `/etc/hosts` is used to create the file descriptors. Typically, file descriptors are shared system-wide and not namespaced.
 
+### consume-inodes
+
+The `consume-inodes` container creates many small files in its working directory, trying to consume all available inodes. When the underlying filesystem is shared between multiple containers, this can lead to the `kubelet` having "DiskPressure"
+
 ### entropy
 
 The `entropy` container consumes randomness by repeatedly querying `/dev/random`. This will deplete the entropy pool for the kernel. Typically, entropy is system-wide and is not namespaced.
@@ -41,6 +47,7 @@ podman run simonkrenger/forkbomb
 podman run simonkrenger/cpuload
 podman run simonkrenger/memoryeater
 podman run simonkrenger/filedescriptors
+podman run simonkrenger/consume-inodes
 podman run simonkrenger/entropy
 podman run simonkrenger/logspam
 ```
