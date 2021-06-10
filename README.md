@@ -38,18 +38,18 @@ The `logspam` container writes a lot of data to `stdout`. Depending on your conf
 
 ## Usage
 
-The containers in this repository are available as trusted builds on [Docker Hub](https://hub.docker.com/r/simonkrenger/).
+The containers in this repository are available on [quay.io](https://www.quay.io).
 
 To run these containers locally:
 
 ```
-podman run simonkrenger/forkbomb
-podman run simonkrenger/cpuload
-podman run simonkrenger/memoryeater
-podman run simonkrenger/filedescriptors
-podman run simonkrenger/consume-inodes
-podman run simonkrenger/entropy
-podman run simonkrenger/logspam
+podman run quay.io/simonkrenger/forkbomb
+podman run quay.io/simonkrenger/cpuload
+podman run quay.io/simonkrenger/memoryeater
+podman run quay.io/simonkrenger/filedescriptors
+podman run quay.io/simonkrenger/consume-inodes
+podman run quay.io/simonkrenger/entropy
+podman run quay.io/simonkrenger/logspam
 ```
 
 To run these containers on Kubernetes as a pod (example):
@@ -62,5 +62,5 @@ metadata:
 spec:
   containers:
   - name: cpuload
-    image: simonkrenger/cpuload:latest
+    image: quay.io/simonkrenger/cpuload:latest
 ```
